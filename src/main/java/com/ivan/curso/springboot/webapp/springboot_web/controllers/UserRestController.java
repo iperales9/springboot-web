@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,13 +33,7 @@ public class UserRestController {
         User user2 = new User("Juan", "Castillo");
         User user3 = new User("Maria", "Sucias");
 
-        List<User> users = new ArrayList<>();
-        users.add(user);
-        users.add(user1);
-        users.add(user2);
-        users.add(user3);
-
-        return users;
+        return List.of(user, user1, user2, user3);
     }
 
     @GetMapping("/details-map")
